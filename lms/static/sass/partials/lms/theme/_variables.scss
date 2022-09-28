@@ -1,0 +1,9 @@
+$primary: #3b85ff;
+
+// Theme fonts
+$font-family-title: 'Open Sans';
+$serif: 'Georgia', Cambria, 'Times New Roman', Times, serif;
+$f-sans-serif: 'Open Sans','Helvetica Neue', Helvetica, Arial, sans-serif !default;
+
+// Initialize the Open edX Bootstrap theme
+@import 'edx-bootstrap/sass/open-edx/theme';

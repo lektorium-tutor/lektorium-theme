@@ -1,9 +1,11 @@
-$primary: #3b85ff;
-
+$primary: #1f1f1f;
+$secondary: #ce4d46;
 // Theme fonts
 $font-family-title: 'Open Sans';
 $serif: 'Georgia', Cambria, 'Times New Roman', Times, serif;
 $f-sans-serif: 'Open Sans','Helvetica Neue', Helvetica, Arial, sans-serif !default;
+
+//$button-bg-hover-color: #ce4d46 !default;
 
 // Initialize the Open edX Bootstrap theme
 @import 'edx-bootstrap/sass/open-edx/theme';

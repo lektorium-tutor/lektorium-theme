@@ -15,7 +15,13 @@ body, body.view-profile {
 }
 
 .btn, .global-header .nav-links .secondary .btn {
-  border-radius: 0;
+  border-radius: 3px;
+
+  &:hover {
+    background-color: #ce4d46 !important;
+    color: white !important;
+    border-color: white !important;
+  }
 }
 
 %t-title {
@@ -52,13 +58,16 @@ header.global-header {
   box-shadow: none;
 }
 
-header.global-header .nav-links .secondary .user-image-frame {
-  border-radius: 0;
+header.global-header .nav-links .secondary {
+  .user-image-frame {
+    border-radius: 0;
+  }
+
+  .dropdown-user-menu {
+    position: fixed;
+  }
 }
 
-header.global-header .nav-links .secondary .dropdown-user-menu {
-  position: fixed;
-}
 
 /////////////////// Sign in form
 
@@ -70,48 +79,55 @@ header.global-header .nav-links .secondary .dropdown-user-menu {
 }
 
 /////////////////// Home page
-.home header {
-  background-color: #fff;
-  box-shadow: none;
+.home {
+  header {
+    background-color: #fff;
+    box-shadow: none;
+  }
+
+  > header {
+
+    .title {
+      box-shadow: none;
+
+      > .heading-group {
+        text-align: center;
+        width: 100%;
+
+        h1 {
+          text-align: center;
+        }
+      }
+    }
+
+    .outer-wrapper {
+      padding: 0;
+    }
+  }
+
+  .courses-container .courses .courses-listing {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: normal;
+
+    .courses-listing-item {
+      margin: 0 20px 30px;
+      // Fix right margin
+      &:nth-child(4n), &:last-child {
+        margin-right: 20px;
+      }
+    }
+  }
 }
 
-.home > header .title {
-  box-shadow: none;
-}
-
-.home > header .outer-wrapper {
-  padding: 0;
-}
-
-.home > header .title > .heading-group {
-  text-align: center;
-  width: 100%;
-}
-
-.home > header .title > .heading-group h1 {
-  text-align: center;
-}
 
 .animation-home-header-pop-up, .home > header .outer-wrapper {
   animation: none;
 }
 
-.highlighted-courses .courses, .find-courses .courses {
+.highlighted-courses .courses,
+.find-courses .courses {
   padding-top: 0;
-}
-
-.home .courses-container .courses .courses-listing {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: normal;
-
-  .courses-listing-item {
-    margin: 0 20px 30px;
-    // Fix right margin
-    &:nth-child(4n), &:last-child {
-      margin-right: 20px;
-    }
-  }
 }
 
 ////////////////// User dashboard /dashboard
@@ -128,31 +144,47 @@ nav.wrapper-preview-menu {
 }
 
 ////////////////// Course about page
-.course-info header.course-profile {
-  background: #fff;
-  border-bottom: 0;
-  box-shadow: none;
 
-  .intro-inner-wrapper {
-    border: 0;
+.course-info {
+  header.course-profile {
+    background: #fff;
+    border-bottom: 0;
     box-shadow: none;
+
+    .intro-inner-wrapper {
+      border: 0;
+      box-shadow: none;
+    }
+  }
+
+  .container {
+    padding: 40px 20px 10px;
+    max-width: 1920px;
+  }
+
+  .details {
+    font: normal 1.2em/1.6em "Open Sans", sans;
+
+    .inner-wrapper > section {
+      margin-bottom: 0;
+    }
   }
 }
 
-.course-info {
-  .container {
-    padding-bottom: 0;
-  }
-
-  .details .inner-wrapper > section {
-    margin-bottom: 0;
-  }
-
   header.course-profile .intro-inner-wrapper .intro .main-cta {
-    span.register {
+    a.register {
       @extend %t-copy-base;
       padding: 10px 0;
+
+      &:hover:not(:disabled) {
+        background-image: none !important;
+        background-color: $secondary !important;
+        border-color: $secondary !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+      }
     }
+
 
     strong {
       background-image: none;
@@ -163,7 +195,6 @@ nav.wrapper-preview-menu {
       }
     }
   }
-}
 
 
 /////////////////// Course search
@@ -225,3 +256,4 @@ nav.wrapper-preview-menu {
     }
   }
 }
+

@@ -1,0 +1,11 @@
+% if messages:
+<ul class="messages">
+    % for message in messages:
+        % if message.tags:
+        <li class="${message.tags}">${message}</li>
+        % else:
+        <li>${message}</li>
+        % endif
+    % endfor
+</ul>
+% endif

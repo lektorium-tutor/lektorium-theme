@@ -257,3 +257,13 @@ nav.wrapper-preview-menu {
   }
 }
 
+#messages {
+  position: fixed;
+  right: 20%;
+  max-width: 15%;
+  width: 15%;
+  background-color: white;
+  padding: 1em;
+  border: 1px solid #ce4d46;
+  color: #ce4d46;
+}

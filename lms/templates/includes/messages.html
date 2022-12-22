@@ -1,11 +1,14 @@
 % if messages:
-<ul class="messages">
+<div id="messages">
     % for message in messages:
+    <div class="message">
+        <span class="icon icon-alert fa fa fa-warning" aria-hidden="true"></span>
         % if message.tags:
-        <li class="${message.tags}">${message}</li>
+            <p class="${message.tags}">${message}</p>
         % else:
-        <li>${message}</li>
+            <p>${message}</p>
         % endif
+    </div>
     % endfor
-</ul>
+</div>
 % endif

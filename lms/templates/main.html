@@ -197,9 +197,9 @@ ${render_require_js_path_overrides(settings.REQUIRE_JS_PATH_OVERRIDES) | n, deco
 
   <div id="messages"></div>
   <%include file="/includes/messages.html" />
-  <%include file="/page_banner.html" />
 
 <div class="content-wrapper main-container" id="content" dir="${static.dir_rtl()}">
+  <%include file="/page_banner.html" />
   ${next.body()}
   <%block name="bodyextra"/>
 </div>

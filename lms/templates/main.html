@@ -195,8 +195,9 @@ ${render_require_js_path_overrides(settings.REQUIRE_JS_PATH_OVERRIDES) | n, deco
 
   <div class="marketing-hero"><%block name="marketing_hero"></%block></div>
 
-  <div id="messages"></div>
+  % if messages:
   <%include file="/includes/messages.html" />
+  % endif
 
 <div class="content-wrapper main-container" id="content" dir="${static.dir_rtl()}">
   <%include file="/page_banner.html" />
